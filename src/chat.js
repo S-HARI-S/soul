@@ -10,6 +10,11 @@ import {
 } from "react-native";
 import React, { useCallback } from "react";
 
+
+
+
+
+
 export default function Chat({ message, notif, newMessage }) {
   return (
     <TouchableHighlight
@@ -59,7 +64,6 @@ const styles = StyleSheet.create({
     // backgroundColor:"#fff",
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 2,
     marginVertical: 10,
     width: "98%",
     // Remove fixed height
