@@ -4,6 +4,8 @@ import Chat from "./src/chat";
 import PinnedChats from "./src/pinnedChats/round";
 import Octagon from "./src/pinnedChats/flower";
 import Rectangle from "./src/pinnedChats/reactangle";
+import BottomDraw from "./src/bottomDraw";
+
 
 
 export default function App() {
@@ -77,13 +79,15 @@ export default function App() {
           incoming: true,
         }}
       />
+
+     {/* < BottomDraw /> */}
+     
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",

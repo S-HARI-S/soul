@@ -8,19 +8,28 @@ import {
   Alert,
   Vibration,
 } from "react-native";
-import React, { useCallback } from "react";
+import React, { useState } from "react";
 
-
-
-
+import BottomDraw from "./bottomDraw";
 
 
 export default function Chat({ message, notif, newMessage }) {
+  const [isBottomDrawOpen, setIsBottomDrawOpen] = useState(false);
+
+  const openBottomDraw = () => {
+    setIsBottomDrawOpen(true);
+  };
+
+  const closeBottomDraw = () => {
+    setIsBottomDrawOpen(false);
+  };
+
   return (
+    <>
     <TouchableHighlight
       onLongPress={() => {
         Vibration.vibrate(20);
-        alert("thyr");
+        openBottomDraw()
       }}
     >
       <View style={styles.individualchats}>
@@ -56,6 +65,8 @@ export default function Chat({ message, notif, newMessage }) {
         </View>
       </View>
     </TouchableHighlight>
+    {isBottomDrawOpen && <BottomDraw onClose={closeBottomDraw} />}
+    </>
   );
 }
 
