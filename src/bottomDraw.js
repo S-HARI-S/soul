@@ -24,7 +24,7 @@ export default function BottomDraw({onClose}) {
       onRequestClose={closeModal}
 
     >
-        <View style={{justifyContent:"flex-end", flex:1}}>
+        <View style={{justifyContent:"flex-end", flex:1, alignItems:"center"}}>
 
 
       <View style={styles.container}>
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     borderColor:"#00431B",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: 400,
     height: 400,
-    backgroundColor: "#021100",
+    backgroundColor: "#000",
     borderTopEndRadius: 40,
     borderTopLeftRadius: 40,
   },
