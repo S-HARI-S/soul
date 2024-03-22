@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, StyleSheet, View, AppRegistry } from "react-native";
-import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
+
 import { PaperProvider } from "react-native-paper";
 import { name as appName } from "./app.json";
 import { NavigationContainer } from "@react-navigation/native";
@@ -9,13 +9,12 @@ import Chat from "./src/chat";
 import PinnedChats from "./src/pinnedChats/round";
 import Octagon from "./src/pinnedChats/flower";
 import Rectangle from "./src/pinnedChats/reactangle";
-
-const Tab = createMaterialBottomTabNavigator();
+import BottomNavbar from "./src/bottomNavbar";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <PaperProvider>
+    <PaperProvider>
+      <NavigationContainer>
         <ScrollView contentContainerStyle={styles.container}>
           <View
             style={{
@@ -105,13 +104,10 @@ export default function App() {
               incoming: false,
             }}
           />
+          <BottomNavbar />
         </ScrollView>
-        <Tab.Navigator barStyle={{ backgroundColor: "#fff" }}>
-          <Tab.Screen name="asd" component={Rectangle} />
-          <Tab.Screen name="Sasdasd" component={Chat} />
-        </Tab.Navigator>
-      </PaperProvider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 
